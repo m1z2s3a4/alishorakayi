@@ -1,3 +1,7 @@
+/* =========================
+   RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,9 +13,10 @@ html {
 }
 
 body {
-    background: #080808;
-    color: #fff;
     font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #ffffff;
+    line-height: 1.6;
 }
 
 a {
@@ -20,36 +25,35 @@ a {
 }
 
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .header {
-    height: 82px;
+    height: 80px;
     padding: 0 6%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    background: rgba(8, 8, 8, 0.96);
-    border-bottom: 1px solid #242424;
-
+    background: #050505;
+    border-bottom: 1px solid #222;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 12px;
-
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: -1px;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
 .brand img {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     object-fit: contain;
 }
 
@@ -60,10 +64,10 @@ a {
 
 .nav a {
     font-size: 12px;
-    font-weight: 700;
+    font-weight: bold;
+    letter-spacing: 1px;
     color: #aaa;
-
-    transition: 0.25s;
+    transition: 0.3s;
 }
 
 .nav a:hover {
@@ -73,161 +77,136 @@ a {
 .search-btn {
     width: 40px;
     height: 40px;
-
-    background: #fff;
-    color: #000;
-
-    border: none;
-    border-radius: 50%;
-
+    border: 1px solid #333;
+    background: transparent;
+    color: white;
     font-size: 22px;
     cursor: pointer;
 }
 
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
-    min-height: 600px;
-
-    padding: 90px 8%;
-
+    min-height: 560px;
+    padding: 80px 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 50px;
 
     background:
-        radial-gradient(circle at 80% 40%, #333 0%, #111 25%, #080808 60%);
+        radial-gradient(circle at 75% 45%, #292929 0%, #111 35%, #080808 70%);
 }
 
 .hero-content {
-    max-width: 700px;
+    max-width: 650px;
 }
 
 .tag {
     display: inline-block;
-
-    padding: 8px 14px;
-
-    border: 1px solid #444;
-
+    padding: 6px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
     font-size: 11px;
-    font-weight: 800;
+    font-weight: bold;
     letter-spacing: 2px;
-
-    margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-size: clamp(55px, 8vw, 110px);
-    line-height: 0.88;
-
-    letter-spacing: -5px;
-
+    font-size: clamp(45px, 7vw, 90px);
+    line-height: 0.9;
+    font-weight: 1000;
+    letter-spacing: -4px;
     margin-bottom: 30px;
 }
 
 .hero p {
-    max-width: 550px;
-
-    color: #999;
-
-    line-height: 1.7;
-
-    font-size: 16px;
+    max-width: 500px;
+    color: #aaa;
+    font-size: 15px;
+    margin-bottom: 30px;
 }
 
 .hero-btn {
     display: inline-block;
-
-    margin-top: 32px;
-
-    padding: 16px 25px;
-
-    background: #fff;
-    color: #000;
-
+    padding: 14px 25px;
+    background: white;
+    color: black;
     font-size: 12px;
-    font-weight: 800;
-
-    transition: 0.25s;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
 .hero-btn:hover {
-    transform: translateX(7px);
+    background: #bbb;
+    transform: translateY(-3px);
 }
 
 .hero-side {
-    width: 330px;
+    width: 360px;
 }
 
 .hero-card {
     padding: 35px;
-
-    min-height: 250px;
-
-    border: 1px solid #333;
-
-    background:
-        linear-gradient(135deg, #202020, #0b0b0b);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    min-height: 230px;
+    border: 1px solid #444;
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(8px);
 }
 
 .hero-card span {
     font-size: 10px;
+    color: #999;
     letter-spacing: 2px;
-    color: #aaa;
 }
 
 .hero-card h2 {
-    margin: 12px 0;
+    font-size: 45px;
+    margin: 20px 0 10px;
+}
 
-    font-size: 30px;
+.hero-card p {
+    font-size: 12px;
+    color: #999;
 }
 
 
-/* CATEGORIES */
+/* =========================
+   CATEGORIES
+========================= */
 
 .categories {
-    display: flex;
-
-    padding: 0 7%;
-
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     border-top: 1px solid #222;
     border-bottom: 1px solid #222;
+    background: #090909;
 }
 
 .categories a {
-    flex: 1;
-
-    padding: 24px 15px;
-
+    padding: 20px;
     text-align: center;
-
-    font-size: 12px;
-    font-weight: 800;
-
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
     color: #aaa;
-
     border-right: 1px solid #222;
-
-    transition: 0.25s;
-}
-
-.categories a:first-child {
-    border-left: 1px solid #222;
+    transition: 0.3s;
 }
 
 .categories a:hover {
-    color: #000;
-    background: #fff;
+    color: white;
+    background: #151515;
 }
 
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 
 .section {
     padding: 90px 7%;
@@ -235,85 +214,87 @@ a {
 
 .section-title {
     display: flex;
-
     justify-content: space-between;
     align-items: end;
-
     margin-bottom: 35px;
 }
 
 .section-title span {
-    color: #777;
-
+    color: #888;
     font-size: 11px;
-
     letter-spacing: 3px;
-
-    font-weight: 700;
 }
 
 .section-title h2 {
-    margin-top: 7px;
-
     font-size: 38px;
-
-    letter-spacing: -2px;
+    line-height: 1;
+    margin-top: 5px;
 }
 
 .section-title > a {
     font-size: 11px;
-    font-weight: 800;
-
+    font-weight: bold;
     color: #aaa;
 }
 
+.section-title > a:hover {
+    color: white;
+}
 
-/* NEWS */
+
+/* =========================
+   NEWS
+========================= */
 
 .news-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
-    gap: 22px;
+    gap: 20px;
 }
 
 .news-card {
     background: #111;
-
-    border: 1px solid #252525;
-
+    border: 1px solid #292929;
     overflow: hidden;
-
-    transition: 0.3s;
+    transition: 0.35s;
 }
 
 .news-card:hover {
-    transform: translateY(-7px);
-
-    border-color: #777;
+    transform: translateY(-8px);
+    border-color: #555;
 }
 
 .news-image {
-    height: 230px;
-
-    display: flex;
-    align-items: flex-end;
-
-    padding: 20px;
-
+    height: 260px;
+    position: relative;
+    overflow: hidden;
     background:
-        linear-gradient(135deg, #333, #101010);
+        linear-gradient(135deg, #252525, #0d0d0d);
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.05);
 }
 
 .news-image span {
-    padding: 7px 10px;
-
-    background: #fff;
-    color: #000;
-
-    font-size: 10px;
-    font-weight: 800;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    padding: 6px 10px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid #444;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .news-info {
@@ -321,201 +302,173 @@ a {
 }
 
 .news-info small {
-    color: #666;
-
+    color: #777;
     font-size: 9px;
-
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 .news-info h3 {
-    margin: 14px 0;
-
-    font-size: 23px;
-
-    line-height: 1.1;
+    font-size: 22px;
+    margin: 10px 0;
 }
 
 .news-info p {
     color: #888;
-
-    font-size: 14px;
-
-    line-height: 1.6;
+    font-size: 12px;
+    margin-bottom: 20px;
 }
 
 .news-info a {
-    display: inline-block;
-
-    margin-top: 22px;
-
     font-size: 10px;
-
-    font-weight: 800;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 
-/* GAMES */
+/* =========================
+   POPULAR GAMES
+========================= */
 
 .games-grid {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
     gap: 15px;
 }
 
 .game-card {
-    min-height: 230px;
-
+    min-height: 220px;
     padding: 25px;
-
-    background: #111;
-
     border: 1px solid #292929;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: flex-end;
-
+    background: #111;
+    position: relative;
+    overflow: hidden;
     transition: 0.3s;
 }
 
 .game-card:hover {
-    background: #fff;
-    color: #000;
-
-    transform: translateY(-7px);
+    transform: translateY(-5px);
+    background: #151515;
+    border-color: #555;
 }
 
 .game-number {
-    color: #555;
-
-    font-size: 13px;
-
-    margin-bottom: auto;
+    font-size: 50px;
+    font-weight: 900;
+    color: #222;
+    position: absolute;
+    top: 10px;
+    right: 15px;
 }
 
 .game-card h3 {
-    font-size: 23px;
-
-    margin-bottom: 8px;
+    margin-top: 60px;
+    font-size: 19px;
 }
 
 .game-card p {
-    color: #888;
-
-    font-size: 12px;
+    color: #777;
+    font-size: 11px;
+    margin: 5px 0 25px;
 }
 
 .game-card a {
-    margin-top: 20px;
-
-    font-size: 10px;
-
-    font-weight: 800;
+    font-size: 9px;
+    font-weight: bold;
 }
 
 
-/* PLATFORMS */
+/* =========================
+   PLATFORMS
+========================= */
 
 .platforms {
-    padding: 80px 7%;
-
-    background: #111;
-
+    padding: 70px 7%;
+    background: #101010;
     border-top: 1px solid #222;
     border-bottom: 1px solid #222;
 }
 
 .platforms h2 {
-    margin-bottom: 30px;
-
     font-size: 30px;
+    margin-bottom: 30px;
 }
 
 .platform-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 15px;
 }
 
 .platform-grid a {
-    padding: 35px;
-
+    min-height: 130px;
+    padding: 25px;
     border: 1px solid #333;
-
-    background: #0b0b0b;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     transition: 0.3s;
 }
 
 .platform-grid a:hover {
-    background: #fff;
-    color: #000;
+    background: #1a1a1a;
+    transform: translateY(-5px);
 }
 
 .platform-grid strong {
-    display: block;
-
-    font-size: 25px;
-
-    margin-bottom: 10px;
+    font-size: 24px;
 }
 
 .platform-grid span {
-    font-size: 10px;
-
     color: #777;
+    font-size: 10px;
+    margin-top: 5px;
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-    padding: 60px 7%;
-
+    padding: 50px 7%;
     text-align: center;
-
     background: #050505;
+    border-top: 1px solid #222;
 }
 
 .footer-brand {
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     gap: 10px;
-
-    font-size: 22px;
+    margin-bottom: 10px;
 }
 
 .footer-brand img {
-    width: 40px;
-    height: 40px;
-
+    width: 30px;
+    height: 30px;
     object-fit: contain;
 }
 
+.footer-brand strong {
+    font-size: 18px;
+}
+
 footer p {
-    margin: 15px 0;
-
-    color: #777;
-
-    font-size: 13px;
+    color: #666;
+    font-size: 11px;
+    margin-bottom: 15px;
 }
 
 footer small {
     color: #444;
+    font-size: 9px;
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 900px) {
 
@@ -524,13 +477,13 @@ footer small {
     }
 
     .hero {
-        min-height: 520px;
-
-        padding: 70px 7%;
+        padding: 60px 6%;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .hero-side {
-        display: none;
+        width: 100%;
     }
 
     .news-grid {
@@ -541,7 +494,15 @@ footer small {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .platform-grid {
+        grid-template-columns: 1fr;
+    }
 }
+
 
 @media (max-width: 600px) {
 
@@ -550,23 +511,17 @@ footer small {
     }
 
     .hero h1 {
-        font-size: 58px;
-
-        letter-spacing: -3px;
-    }
-
-    .categories {
-        padding: 0;
-
-        overflow-x: auto;
-    }
-
-    .categories a {
-        min-width: 120px;
+        font-size: 48px;
+        letter-spacing: -2px;
     }
 
     .section {
-        padding: 65px 6%;
+        padding: 60px 5%;
+    }
+
+    .section-title {
+        align-items: flex-start;
+        gap: 20px;
     }
 
     .section-title h2 {
@@ -577,8 +532,11 @@ footer small {
         grid-template-columns: 1fr;
     }
 
-    .platform-grid {
-        grid-template-columns: 1fr;
+    .categories {
+        grid-template-columns: 1fr 1fr;
     }
 
+    .news-image {
+        height: 230px;
+    }
 }
