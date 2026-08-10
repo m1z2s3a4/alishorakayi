@@ -1,103 +1,246 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>alishorakayi | Gaming News</title>
+    <meta name="description" content="Latest gaming news, games, updates and reviews.">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <div class="logo">
-        <img src="logo.png" alt="alishorakayi logo">
+<header class="header">
+    <a href="#" class="brand">
+        <img src="logo.png" alt="alishorakayi">
         <span>alishorakayi</span>
-    </div>
+    </a>
 
-    <nav>
+    <nav class="nav">
         <a href="#">HOME</a>
-        <a href="#">NEWS</a>
-        <a href="#">GAMES</a>
-        <a href="#">PC</a>
-        <a href="#">PLAYSTATION</a>
-        <a href="#">XBOX</a>
-        <a href="#">MOBILE</a>
+        <a href="#news">NEWS</a>
+        <a href="#games">GAMES</a>
+        <a href="#pc">PC</a>
+        <a href="#console">CONSOLE</a>
+        <a href="#mobile">MOBILE</a>
     </nav>
+
+    <button class="search-btn">⌕</button>
 </header>
+
 
 <main>
 
+    <!-- HERO -->
     <section class="hero">
+
         <div class="hero-content">
-            <p class="category">🔥 BREAKING NEWS</p>
-            <h1>THE NEXT GENERATION OF GAMING IS HERE</h1>
+            <div class="tag">🔥 GAMING NEWS</div>
+
+            <h1>
+                THE WORLD<br>
+                OF GAMING
+            </h1>
+
             <p>
-                Latest gaming news, game releases, updates,
-                reviews and everything gamers need to know.
+                Latest gaming news, upcoming games,
+                updates, reviews and everything gamers need.
             </p>
-            <button>READ MORE →</button>
+
+            <a href="#news" class="hero-btn">
+                EXPLORE NEWS →
+            </a>
         </div>
+
+        <div class="hero-side">
+            <div class="hero-card">
+                <span>FEATURED</span>
+                <h2>THE NEXT BIG GAME</h2>
+                <p>Discover what's coming next in gaming.</p>
+            </div>
+        </div>
+
     </section>
 
-    <section class="section">
-        <h2>🔥 LATEST NEWS</h2>
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+
+        <a href="#news">📰 NEWS</a>
+        <a href="#games">🎮 GAMES</a>
+        <a href="#pc">💻 PC</a>
+        <a href="#console">🎯 CONSOLE</a>
+        <a href="#mobile">📱 MOBILE</a>
+
+    </section>
+
+
+    <!-- NEWS -->
+    <section class="section" id="news">
+
+        <div class="section-title">
+            <div>
+                <span>LATEST</span>
+                <h2>NEWS</h2>
+            </div>
+
+            <a href="#">VIEW ALL →</a>
+        </div>
+
 
         <div class="news-grid">
 
             <article class="news-card">
-                <div class="news-image">GAME NEWS</div>
-                <div class="news-content">
-                    <span>NEWS</span>
-                    <h3>Latest Gaming News</h3>
-                    <p>Discover the newest updates from the gaming world.</p>
+                <div class="news-image">
+                    <span>GAME NEWS</span>
+                </div>
+
+                <div class="news-info">
+                    <small>GAMING • TODAY</small>
+                    <h3>Big News From The Gaming World</h3>
+                    <p>
+                        The latest updates, announcements
+                        and important gaming news.
+                    </p>
                     <a href="#">READ MORE →</a>
                 </div>
             </article>
 
+
             <article class="news-card">
-                <div class="news-image">NEW GAMES</div>
-                <div class="news-content">
-                    <span>GAMES</span>
-                    <h3>New Games Coming Soon</h3>
-                    <p>Check out the biggest upcoming games.</p>
+                <div class="news-image">
+                    <span>NEW GAME</span>
+                </div>
+
+                <div class="news-info">
+                    <small>GAMES • TODAY</small>
+                    <h3>New Games You Should Know</h3>
+                    <p>
+                        Discover upcoming games and
+                        exciting new releases.
+                    </p>
                     <a href="#">READ MORE →</a>
                 </div>
             </article>
 
+
             <article class="news-card">
-                <div class="news-image">UPDATES</div>
-                <div class="news-content">
+                <div class="news-image">
                     <span>UPDATE</span>
+                </div>
+
+                <div class="news-info">
+                    <small>UPDATE • TODAY</small>
                     <h3>Major Game Updates</h3>
-                    <p>Important updates and new content from popular games.</p>
+                    <p>
+                        New content, features and updates
+                        for popular games.
+                    </p>
                     <a href="#">READ MORE →</a>
                 </div>
             </article>
 
         </div>
+
     </section>
 
-    <section class="section">
-        <h2>🎮 POPULAR GAMES</h2>
 
-        <div class="games">
-            <div class="game">GTA VI</div>
-            <div class="game">CALL OF DUTY</div>
-            <div class="game">MINECRAFT</div>
-            <div class="game">FORTNITE</div>
+    <!-- POPULAR GAMES -->
+    <section class="section" id="games">
+
+        <div class="section-title">
+            <div>
+                <span>DISCOVER</span>
+                <h2>POPULAR GAMES</h2>
+            </div>
+
+            <a href="#">VIEW ALL →</a>
         </div>
+
+
+        <div class="games-grid">
+
+            <article class="game-card">
+                <div class="game-number">01</div>
+                <h3>GTA VI</h3>
+                <p>Action • Open World</p>
+                <a href="#">VIEW GAME →</a>
+            </article>
+
+            <article class="game-card">
+                <div class="game-number">02</div>
+                <h3>CALL OF DUTY</h3>
+                <p>FPS • Action</p>
+                <a href="#">VIEW GAME →</a>
+            </article>
+
+            <article class="game-card">
+                <div class="game-number">03</div>
+                <h3>MINECRAFT</h3>
+                <p>Sandbox • Survival</p>
+                <a href="#">VIEW GAME →</a>
+            </article>
+
+            <article class="game-card">
+                <div class="game-number">04</div>
+                <h3>FORTNITE</h3>
+                <p>Battle Royale • Action</p>
+                <a href="#">VIEW GAME →</a>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- PLATFORMS -->
+    <section class="platforms">
+
+        <h2>GAMING PLATFORMS</h2>
+
+        <div class="platform-grid">
+
+            <a href="#" id="pc">
+                <strong>PC</strong>
+                <span>PC GAMING</span>
+            </a>
+
+            <a href="#" id="console">
+                <strong>CONSOLE</strong>
+                <span>PLAYSTATION • XBOX</span>
+            </a>
+
+            <a href="#" id="mobile">
+                <strong>MOBILE</strong>
+                <span>ANDROID • iOS</span>
+            </a>
+
+        </div>
+
     </section>
 
 </main>
 
-<footer>
-    <h2>alishorakayi</h2>
-    <p>Gaming News • Games • Updates • Reviews</p>
-    <p>© 2026 alishorakayi</p>
-</footer>
 
-<script src="script.js"></script>
+<footer>
+
+    <div class="footer-brand">
+        <img src="logo.png" alt="alishorakayi">
+        <strong>alishorakayi</strong>
+    </div>
+
+    <p>
+        Gaming News • Games • Updates • Reviews
+    </p>
+
+    <small>
+        © 2026 alishorakayi
+    </small>
+
+</footer>
 
 </body>
 </html>
