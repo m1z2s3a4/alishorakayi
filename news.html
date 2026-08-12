@@ -1,1 +1,199 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>خبر | ALI GAMING NEWS</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .article-page {
+      min-height: 100vh;
+      padding: 80px 6%;
+      background:
+        radial-gradient(circle at top right, rgba(255,179,0,.08), transparent 35%),
+        #050505;
+    }
+
+    .article-container {
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 35px;
+      padding: 10px 20px;
+      border: 1px solid #292929;
+      border-radius: 9px;
+      color: #aaa;
+      text-decoration: none;
+      transition: .25s;
+    }
+
+    .back-button:hover {
+      color: #111;
+      background: #ffb300;
+      border-color: #ffb300;
+    }
+
+    .article {
+      background: #101010;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 22px;
+      padding: 45px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.45);
+    }
+
+    .article-badge {
+      display: inline-block;
+      padding: 7px 14px;
+      margin-bottom: 20px;
+      border-radius: 7px;
+      background: #ffb300;
+      color: #111;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .article h1 {
+      font-size: clamp(35px, 5vw, 65px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .article-meta {
+      color: #777;
+      font-size: 13px;
+      margin-bottom: 35px;
+    }
+
+    .article-image {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      border-radius: 18px;
+      margin-bottom: 35px;
+    }
+
+    .article-text {
+      color: #bbb;
+      font-size: 18px;
+      line-height: 2.2;
+    }
+
+    .article-text p {
+      margin-bottom: 25px;
+    }
+
+    .source-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 13px 25px;
+      background: #ffb300;
+      color: #111;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .25s;
+    }
+
+    .source-button:hover {
+      transform: translateY(-3px);
+      background: #ffc533;
+    }
+
+    @media (max-width: 600px) {
+
+      .article-page {
+        padding: 45px 5%;
+      }
+
+      .article {
+        padding: 25px;
+      }
+
+      .article-text {
+        font-size: 16px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="article-page">
+
+    <div class="article-container">
+
+      <a href="index.html#news" class="back-button">
+        ← بازگشت به اخبار
+      </a>
+
+      <article class="article">
+
+        <span class="article-badge">
+          خبر جدید
+        </span>
+
+        <h1>
+          GTA VI؛ نگاهی گسترده‌تر به بازی در راه است
+        </h1>
+
+        <div class="article-meta">
+          📅 ۱۷ مرداد ۱۴۰۵
+          <br>
+          🎮 GTA VI
+          <br>
+          📰 منبع: Rockstar Games
+        </div>
+
+        <img
+          src="gta6.jpg"
+          alt="GTA VI"
+          class="article-image"
+        >
+
+        <div class="article-text">
+
+          <p>
+            Rockstar Games اعلام کرده است که اطلاعات و
+            نمای گسترده‌تری از Grand Theft Auto VI
+            در تاریخ ۲۷ اوت ۲۰۲۶ منتشر خواهد شد.
+          </p>
+
+          <p>
+            GTA VI یکی از موردانتظارترین بازی‌های سال‌های
+            اخیر است و طبق اطلاعات رسمی Rockstar،
+            تاریخ فعلی انتشار بازی ۱۹ نوامبر ۲۰۲۶ است.
+          </p>
+
+          <p>
+            برای مشاهده اطلاعات کامل و اعلامیه رسمی،
+            می‌توانید مستقیماً به منبع اصلی خبر مراجعه کنید.
+          </p>
+
+          <a
+            href="https://www.rockstargames.com/newswire/article/9k2kaa1o3297k9/grand-theft-auto-vi-an-extended-look"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="source-button"
+          >
+            مشاهده منبع رسمی Rockstar ←
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </main>
+
+</body>
+
+</html>
