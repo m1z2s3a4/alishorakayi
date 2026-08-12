@@ -978,3 +978,135 @@ nav a {
   }
 
 }
+/* ===== NEWS SEARCH & FILTER ===== */
+
+#news .news-search {
+    display: block;
+    width: min(600px, 90%);
+    height: 52px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+
+    background: #111;
+    color: #fff;
+
+    border: 1px solid #292929;
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 16px;
+
+    outline: none;
+    direction: rtl;
+
+    transition: .25s ease;
+}
+
+#news .news-search::placeholder {
+    color: #777;
+}
+
+#news .news-search:focus {
+    border-color: #ffb300;
+    box-shadow: 0 0 20px rgba(255,179,0,.12);
+}
+
+
+/* FILTER BAR */
+
+#news .news-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+    flex-wrap: wrap;
+
+    margin: 0 auto 40px;
+}
+
+
+/* FILTER BUTTON */
+
+#news .news-filter {
+    appearance: none;
+
+    padding: 10px 20px;
+
+    background: #111;
+    color: #aaa;
+
+    border: 1px solid #292929;
+    border-radius: 9px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+#news .news-filter:hover {
+    color: #fff;
+    border-color: #ffb300;
+    transform: translateY(-2px);
+}
+
+
+/* ACTIVE */
+
+#news .news-filter.active {
+    background: #ffb300;
+    color: #080808;
+
+    border-color: #ffb300;
+
+    box-shadow:
+        0 5px 20px rgba(255,179,0,.15);
+}
+
+
+/* NO RESULTS */
+
+#news .no-news-results {
+    width: min(700px, 90%);
+    margin: 30px auto;
+    padding: 35px;
+
+    text-align: center;
+
+    background: #101010;
+    color: #888;
+
+    border: 1px solid #252525;
+    border-radius: 15px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    #news .news-search {
+        width: 90%;
+        height: 48px;
+        font-size: 14px;
+    }
+
+    #news .news-filters {
+        gap: 7px;
+        padding: 0 10px;
+    }
+
+    #news .news-filter {
+        padding: 8px 13px;
+        font-size: 12px;
+    }
+
+}
