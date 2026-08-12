@@ -647,3 +647,334 @@ grid-template-rows: 300px 200px 200px;
 grid-row: auto;
 }
 }
+/* =========================================
+   ALI GAMING NEWS - VISUAL UPGRADE
+   ========================================= */
+
+body {
+  overflow-x: hidden;
+}
+
+/* ---------- HEADER ---------- */
+
+.header {
+  min-height: 82px;
+  padding: 0 6%;
+}
+
+.logo {
+  font-size: 22px;
+  white-space: nowrap;
+}
+
+nav {
+  gap: 26px;
+}
+
+nav a {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+/* ---------- HERO ---------- */
+
+.hero {
+  min-height: 720px;
+  padding: 80px 6%;
+  gap: 80px;
+}
+
+.hero-image {
+  width: min(55%, 760px);
+  max-width: 760px;
+  border-radius: 24px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: clamp(55px, 7vw, 105px);
+  letter-spacing: -3px;
+  line-height: .95;
+}
+
+.hero-content h2 {
+  font-size: 28px;
+  margin-top: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  line-height: 2;
+  max-width: 560px;
+}
+
+
+/* ---------- GENERAL SECTIONS ---------- */
+
+.section,
+.games,
+.features,
+.gallery,
+.about {
+  padding: 100px 6%;
+}
+
+.section h2,
+.games h2,
+.features h2,
+.gallery h2,
+.about h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  margin-bottom: 60px;
+}
+
+
+/* ---------- NEWS ---------- */
+
+.cards {
+  max-width: 1350px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.card {
+  min-height: 310px;
+  padding: 34px;
+  border-radius: 20px;
+}
+
+.card h3 {
+  font-size: 27px;
+  margin-top: 20px;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 2;
+  color: #aaa;
+}
+
+.card small {
+  color: #777;
+  font-size: 12px;
+}
+
+
+/* ---------- GAMES ---------- */
+
+.game-grid {
+  max-width: 1350px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.game-card {
+  min-height: 450px;
+  border-radius: 20px;
+}
+
+.game-image,
+.game-placeholder {
+  height: 270px;
+}
+
+.game-placeholder {
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+.game-content {
+  padding: 28px;
+}
+
+.game-content h3 {
+  font-size: 24px;
+}
+
+.game-content p {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+
+/* ---------- FEATURES ---------- */
+
+.feature-grid {
+  max-width: 1250px;
+  gap: 25px;
+}
+
+.feature {
+  min-height: 220px;
+  padding: 32px;
+  border-radius: 18px;
+}
+
+.feature h3 {
+  font-size: 23px;
+}
+
+.feature p {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+
+/* ---------- GALLERY ---------- */
+
+.gallery-grid {
+  max-width: 1350px;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 300px 300px;
+  gap: 25px;
+}
+
+.gallery-item {
+  border-radius: 20px;
+}
+
+.gallery-overlay {
+  padding: 35px;
+}
+
+.gallery-overlay h3 {
+  font-size: 30px;
+}
+
+
+/* ---------- ABOUT ---------- */
+
+.about {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about p {
+  max-width: 850px;
+  font-size: 18px;
+  line-height: 2.2;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+.button {
+  padding: 14px 32px;
+  font-size: 15px;
+}
+
+
+/* ---------- HOVER EFFECTS ---------- */
+
+.card,
+.game-card,
+.feature,
+.gallery-item {
+  will-change: transform;
+}
+
+.card:hover,
+.game-card:hover,
+.feature:hover {
+  transform: translateY(-8px);
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 950px) {
+
+  .hero {
+    min-height: auto;
+    padding-top: 70px;
+    padding-bottom: 80px;
+    gap: 45px;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .cards,
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .header {
+    min-height: 75px;
+    padding: 15px 5%;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 55px 5%;
+  }
+
+  .hero-content h1 {
+    font-size: 52px;
+    letter-spacing: -2px;
+  }
+
+  .hero-content h2 {
+    font-size: 21px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .cards,
+  .game-grid,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: auto;
+  }
+
+  .game-card {
+    min-height: auto;
+  }
+
+  .game-image,
+  .game-placeholder {
+    height: 240px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 220px 220px;
+  }
+
+}
