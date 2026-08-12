@@ -1,308 +1,117 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
   const newsSection = document.querySelector("#news");
 
   if (!newsSection) return;
 
-  const cards = Array.from(
-    newsSection.querySelectorAll(".card")
-  );
+  const cards = newsSection.querySelectorAll(".card");
 
-  /* -----------------------------
-     SEARCH BOX
-  ----------------------------- */
+  // Search box
+  const search = document.createElement("input");
 
-  const searchBox = document.createElement("input");
-
-  searchBox.type = "search";
-  searchBox.placeholder = "جستجوی اخبار...";
-  searchBox.className = "news-search";
+  search.type = "search";
+  search.placeholder = "جستجوی اخبار...";
+  search.className = "news-search";
 
   const title = newsSection.querySelector("h2");
 
   if (title) {
-    title.insertAdjacentElement("afterend", searchBox);
+    title.after(search);
   } else {
-    newsSection.prepend(searchBox);
+    newsSection.prepend(search);
   }
 
 
-  /* -----------------------------
-     FILTER BUTTONS
-  ----------------------------- */
+  // Filter buttons
+  const filters = document.createElement("div");
 
-  const filterContainer = document.createElement("div");
+  filters.className = "news-filters";
 
-  filterContainer.className = "news-filters";
+  filters.innerHTML = `
+    <button class="news-filter active" data-filter="all">همه</button>
+    <button class="news-filter" data-filter="gta">GTA</button>
+    <button class="news-filter" data-filter="minecraft">Minecraft</button>
+    <button class="news-filter" data-filter="call of duty">Call of Duty</button>
+    <button class="news-filter" data-filter="battlefield">Battlefield</button>
+    <button class="news-filter" data-filter="fortnite">Fortnite</button>
+  `;
 
-  const filters = [
-    {
-      name: "همه",
-      value: "all"
-    },
-    {
-      name: "GTA",
-      value: "gta"
-    },
-    {
-      name: "Minecraft",
-      value: "minecraft"
-    },
-    {
-      name: "Call of Duty",
-      value: "call of duty"
-    },
-    {
-      name: "Battlefield",
-      value: "battlefield"
-    },
-    {
-      name: "Fortnite",
-      value: "fortnite"
-    }
-  ];
+  search.after(filters);
 
-
-  filters.forEach(filter => {
-
-    const button = document.createElement("button");
-
-    button.type = "button";
-    button.textContent = filter.name;
-    button.dataset.filter = filter.value;
-
-    button.className = "news-filter";
-
-    if (filter.value === "all") {
-      button.classList.add("active");
-    }
-
-    filterContainer.appendChild(button);
-
-  });
-
-
-  searchBox.insertAdjacentElement(
-    "afterend",
-    filterContainer
-  );
-
-
-  /* -----------------------------
-     NORMALIZE TEXT
-  ----------------------------- */
 
   function normalize(text) {
-
     return text
       .toLowerCase()
       .replace(/ي/g, "ی")
-      .replace(/ك/g, "ک")
-      .trim();
-
+      .replace(/ك/g, "ک");
   }
 
 
-  /* -----------------------------
-     FILTER FUNCTION
-  ----------------------------- */
+  function updateNews() {
 
-  function filterNews() {
+    const searchText = normalize(search.value);
 
-    const searchText =
-      normalize(searchBox.value);
+    const active =
+      filters.querySelector(".active");
 
-    const activeButton =
-      filterContainer.querySelector(
-        ".news-filter.active"
-      );
-
-    const selectedFilter =
-      activeButton
-        ? activeButton.dataset.filter
-        : "all";
+    const category =
+      active ? active.dataset.filter : "all";
 
 
-    cards.forEach(card => {
+    cards.forEach(function (card) {
 
       const text =
         normalize(card.textContent);
 
-      const matchesSearch =
-        searchText === "" ||
+      const searchMatch =
         text.includes(searchText);
 
-      const matchesCategory =
-        selectedFilter === "all" ||
-        text.includes(
-          normalize(selectedFilter)
-        );
+      const categoryMatch =
+        category === "all" ||
+        text.includes(normalize(category));
 
 
-      if (
-        matchesSearch &&
-        matchesCategory
-      ) {
-
+      if (searchMatch && categoryMatch) {
         card.style.display = "";
-
-        requestAnimationFrame(() => {
-          card.classList.add("news-visible");
-        });
-
       } else {
-
-        card.classList.remove("news-visible");
-
         card.style.display = "none";
-
       }
 
     });
 
-
-    showNoResults();
-
   }
 
 
-  /* -----------------------------
-     NO RESULTS
-  ----------------------------- */
-
-  function showNoResults() {
-
-    let message =
-      newsSection.querySelector(
-        ".no-news-results"
-      );
-
-
-    const visibleCards =
-      cards.filter(card =>
-        card.style.display !== "none"
-      );
-
-
-    if (
-      visibleCards.length === 0
-    ) {
-
-      if (!message) {
-
-        message =
-          document.createElement("div");
-
-        message.className =
-          "no-news-results";
-
-        message.textContent =
-          "خبری با این مشخصات پیدا نشد.";
-
-        filterContainer.insertAdjacentElement(
-          "afterend",
-          message
-        );
-
-      }
-
-    } else {
-
-      if (message) {
-        message.remove();
-      }
-
-    }
-
-  }
-
-
-  /* -----------------------------
-     SEARCH EVENT
-  ----------------------------- */
-
-  searchBox.addEventListener(
+  // Search
+  search.addEventListener(
     "input",
-    filterNews
+    updateNews
   );
 
 
-  /* -----------------------------
-     FILTER EVENTS
-  ----------------------------- */
-
-  filterContainer
+  // Filters
+  filters
     .querySelectorAll(".news-filter")
-    .forEach(button => {
+    .forEach(function (button) {
 
       button.addEventListener(
         "click",
-        () => {
+        function () {
 
-          filterContainer
-            .querySelectorAll(
-              ".news-filter"
-            )
-            .forEach(btn =>
-              btn.classList.remove("active")
-            );
-
+          filters
+            .querySelectorAll(".news-filter")
+            .forEach(function (btn) {
+              btn.classList.remove("active");
+            });
 
           button.classList.add("active");
 
-          filterNews();
+          updateNews();
 
         }
       );
 
     });
 
-
-  /* -----------------------------
-     KEYBOARD SHORTCUT
-  ----------------------------- */
-
-  document.addEventListener(
-    "keydown",
-    event => {
-
-      if (
-        event.key === "/" &&
-        document.activeElement !== searchBox
-      ) {
-
-        event.preventDefault();
-
-        searchBox.focus();
-
-      }
-
-      if (
-        event.key === "Escape" &&
-        document.activeElement === searchBox
-      ) {
-
-        searchBox.value = "";
-
-        filterNews();
-
-        searchBox.blur();
-
-      }
-
-    }
-  );
-
-
-  /* -----------------------------
-     INITIAL STATE
-  ----------------------------- */
-
-  cards.forEach(card => {
-    card.classList.add("news-visible");
-  });
-
-
-  filterNews();
 
 });
