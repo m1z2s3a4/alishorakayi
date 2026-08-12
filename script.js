@@ -184,7 +184,9 @@ const newsData = [
             <div class="news-source">
                 خبر رسمی و بررسی‌شده
             </div>
-
+<a href="${newsPages[news.category] || 'news.html'}" class="continue-reading">
+    ادامه خبر ←
+</a>
         `;
 
         card.dataset.category = news.category;
