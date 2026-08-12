@@ -8,8 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
         newsSection.querySelectorAll(".card")
     );
 
-    const newsData = [
+const newsPages = {
+    gta: "news-gta6.html",
+    minecraft: "news-minecraft.html",
+    "call of duty": "news-cod.html",
+    battlefield: "news-battlefield.html"
+};
 
+const newsData = [
         {
             category: "gta",
             title: "GTA VI",
